@@ -1,0 +1,19 @@
+<div class="form">
+	<div class="tab-content">
+		<h1>Hi {{vm.user.firstName}}!</h1>
+		<p>You're logged in!!</p>
+		<h3>All registered users:</h3>
+		<div class="field-wrap form-group">
+			<ul>
+			    <li ng-repeat="user in vm.allUsers">
+			        {{user.username}} ({{user.firstName}} {{user.lastName}})
+			        - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
+			    </li>
+			</ul>
+		</div>
+		<p>&nbsp;</p>
+		<div class="form-action">
+			<p><a href="#/login" class="button button-block">Logout</a></p>
+		</div>
+	</div>
+</div>

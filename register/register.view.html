@@ -1,0 +1,35 @@
+<div class="form">    
+    <ul class="tab-group">
+        <li class="tab"><a href="#login">Log In</a></li>
+        <li class="tab active"><a href="#register">Sign Up</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="register">
+            <h1>Sign Up For Free</h1>
+            <br>
+            <form name="form" ng-submit="vm.register()" role="form">
+                <div class="top-row">
+                    <div class="field-wrap form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+                        <label for="username">First name<span class="req">*</span></label>
+                        <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required autocomplete="off"/>
+                    </div>
+                    <div class="field-wrap form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+                        <label for="username">Last name<span class="req">*</span></label>
+                        <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="field-wrap form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                    <label for="username">Username<span class="req">*</span></label>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required autocomplete="off"/>
+                </div>
+                <div class="field-wrap form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                    <label for="password">Password<span class="req">*</span></label>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required autocomplete="off"/>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="button button-block">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
